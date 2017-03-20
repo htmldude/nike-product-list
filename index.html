@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product list</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Oswald:700" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+<body>
+  <h1 class="header">Sale</h1>
+  <div class="list">
+    <ul class="list-in">
+      <li class="list-item">
+        <div class="product-image-container">
+          <img class="product-image" src="http://images2.nike.com/is/image/DotCom/PDP_HERO/849559_010_E_PREM/air-max-2017-mens-running-shoe.jpg" alt="image of the shoe" />
+          <button id="button" class="product-button"><span class="product-button-in">click to</span> show more</button>
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">product title product title product title product title product title product title product title</h2>
+          <p class="product-price">
+            <span class="product-price-regular">
+              $<span class="product-price-regular-in">150</span>
+            </span>
+          </p>
+        </div>
+      </li>
+      <li class="list-item">
+        <div class="product-image-container">
+          <img class="product-image" src="http://images2.nike.com/is/image/DotCom/PDP_HERO/849559_010_E_PREM/air-max-2017-mens-running-shoe.jpg" alt="image of the shoe" />
+          <button class="product-button"><span class="product-button-in">click to</span> show more</button>
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">product title</h2>
+          <p class="product-price product-price-discount">
+            <span class="product-price-regular">
+              $<span class="product-price-regular-in">150</span>
+            </span>
+            <span class="product-price-new">
+              $20.01
+            </span>
+          </p>
+        </div>
+      </li>
+      <li class="list-item">
+        <div class="product-image-container">
+          <img class="product-image" src="http://images2.nike.com/is/image/DotCom/PDP_HERO/849559_010_E_PREM/air-max-2017-mens-running-shoe.jpg" alt="image of the shoe" />
+          <button class="product-button"><span class="product-button-in">click to</span> show more</button>
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">product title</h2>
+          <p class="product-price product-price-discount">
+            <span class="product-price-regular">
+              $<span class="product-price-regular-in">150</span>
+            </span>
+            <span class="product-price-new">
+              $20.01
+            </span>
+          </p>
+        </div>
+      </li>
+      <li class="list-item">
+        <div class="product-image-container">
+          <img class="product-image" src="http://images2.nike.com/is/image/DotCom/PDP_HERO/849559_010_E_PREM/air-max-2017-mens-running-shoe.jpg" alt="image of the shoe" />
+          <button class="product-button"><span class="product-button-in">click to</span> show more</button>
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">product title</h2>
+          <p class="product-price product-price-discount">
+            <span class="product-price-regular">
+              $<span class="product-price-regular-in">150</span>
+            </span>
+            <span class="product-price-new">
+              $20.01
+            </span>
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="overlay"></div>
+
+  <div class="popup">
+    <button id="close" class="popup-button-close">Close</button>
+
+    <div class="popup-header">
+
+      <h2 class="popup-product-name">
+        For gamers by gamers TEE
+      </h2>
+
+      <div class="popup-product-id">
+        Item #: 701642853695
+      </div>
+
+      <div class="popup-product-rating">
+        <div class="rating rating-3"><span class="rating-in"></span></div>
+      </div>
+
+    </div>
+
+    <div class="popup-image">
+      <span class="popup-product-image"><img src="http://images2.nike.com/is/image/DotCom/PDP_HERO/849559_010_E_PREM/air-max-2017-mens-running-shoe.jpg" alt="image of the shoe" /></span>
+    </div>
+    <div class="popup-body">
+      <div class="popup-product-description">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      </div>
+      <p class="popup-product-price popup-product-price-discount">
+        <span class="popup-product-price-regular">
+          $<span class="popup-product-price-regular-in">150</span>
+        </span>
+        <span class="popup-product-price-new">
+          $20.01
+        </span>
+      </p>
+      <dl class="size">
+        <dt class="size-header">SELECT a SIzE:</dt>
+        <dd class="size-list">
+          <ul class="size-list-in">
+            <li class="size-list-item"><input id="size-xs" type="radio" name="size" /><label for="size-xs" class="size-list-item-name">XS</label></li>
+            <li class="size-list-item"><input id="size-s" type="radio" name="size" /><label for="size-s" class="size-list-item-name">S</label></li>
+            <li class="size-list-item"><input id="size-m" type="radio" name="size" /><label for="size-m" class="size-list-item-name">M</label></li>
+            <li class="size-list-item"><input id="size-l" type="radio" name="size" /><label for="size-l" class="size-list-item-name">L</label></li>
+          </ul>
+        </dd>
+      </dl>
+      <button class="popup-button">Add to cart</button>
+    </div>
+  </div>
+  <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

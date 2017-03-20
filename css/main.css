@@ -1,0 +1,453 @@
+*,
+*:after,
+*:before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	position: relative;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	color: #282828;
+	overflow-y: scroll;
+}
+
+.header {
+	padding: 40px 20px;
+	text-align: center;
+	color: #fff;
+	background-color: #ccc;
+	background-image: url('https://dl.dropboxusercontent.com/u/3739354/memory-test/7.jpg');
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: cover;
+	text-transform: uppercase;
+	font-family: 'Tahoma', sans-serif;
+	font-size: 60px;
+	letter-spacing: 0.4em;
+}
+@media (min-width: 719px) {
+	.header {
+		display: none;
+	}
+}
+
+.list {
+	padding: 30px;
+}
+.list .list-in {
+	list-style: none;
+	margin-top: -30px;
+	overflow: hidden;
+	font-size: 0;
+}
+.list .list-item {
+	font-size: 16px;
+	padding-top: 30px;
+}
+@media (min-width: 719px) {
+	.list {
+		padding: 30px 20px;
+	}
+	.list .list-item {
+		display: inline-block;
+		vertical-align: top;
+		width: 50%;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+@media (min-width: 959px) {
+	.list {
+		padding: 50px 0;
+		width: 855px;
+		margin: 0 auto;
+	}
+	.list .list-in {
+		list-style: none;
+		margin-top: -10px;
+	}
+	.list .list-item {
+		width: 33.333%;
+		padding-left: 10px;
+		padding-right: 10px;
+		padding-top: 10px;
+	}
+	.list .list-item:hover .product-button {
+		opacity: 1;
+	}
+}
+
+.product-image-container {
+	position: relative;
+	height: 0;
+	padding: 0 0 100%;
+	overflow: hidden;
+	margin: 0 0 10px;
+}
+.product-image-container .product-image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+}
+.product-image-container .product-button {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	color: #8ae6cf;
+	border: 0;
+	text-transform: uppercase;
+	background-color: rgba(0, 0, 0, 0.5);
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	padding: 15px;
+	text-align: center;
+	font-size: 18px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	outline: none;
+}
+@media (min-width: 719px) {
+	.product-image-container .product-button {
+		font-size: 20px;
+	}
+}
+@media (min-width: 959px) {
+	.product-image-container .product-button {
+		left: 50%;
+		top: 50%;
+		bottom: auto;
+		width: auto;
+		-webkit-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+		padding: 5px 10px;
+		background-color: #8ae6cf;
+		color: #2c303d;
+		font-size: 18px;
+		opacity: 0;
+		cursor: pointer;
+	}
+	.product-image-container .product-button .product-button-in {
+		display: none;
+	}
+}
+
+.product-info {
+	position: relative;
+}
+
+.product-name {
+	text-align: center;
+	font-size: 18px;
+	font-family: 'Oswald', sans-serif;
+	font-weight: 700;
+	text-transform: uppercase;
+	padding: 0 0 5px;
+}
+@media (min-width: 719px) {
+	.product-name {
+		font-size: 20px;
+		padding: 0;
+	}
+}
+@media (min-width: 959px) {
+	.product-name {
+		font-size: 12px;
+	}
+}
+
+.product-price {
+	white-space: nowrap;
+	font-size: 18px;
+	text-transform: uppercase;
+	font-weight: 700;
+	text-align: center;
+}
+@media (min-width: 719px) {
+	.product-price {
+		font-size: 22px;
+	}
+}
+@media (min-width: 959px) {
+	.product-price {
+		background: #8ae6cf;
+		position: absolute;
+		padding: 0 5px;
+		top: -50px;
+		right: 0;
+		font-size: 16px;
+	}
+}
+
+.product-price-discount .product-price-regular {
+	display: none;
+	padding-right: 15px;
+}
+.product-price-discount .product-price-regular-in {
+	text-decoration: line-through;
+}
+@media (min-width: 959px) {
+	.product-price-discount .product-price-regular {
+		display: inline;
+	}
+}
+
+.product-price-new {
+	color: #ce2c52;
+}
+
+.overlay {
+	opacity: 0;
+	visibility: hidden;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 10;
+	-webkit-transition: opacity 0.2s, visibility 0.2s, -webkit-transform 0.2s;
+	transition: opacity 0.2s, visibility 0.2s, -webkit-transform 0.2s;
+	transition: transform 0.2s, opacity 0.2s, visibility 0.2s;
+	transition: transform 0.2s, opacity 0.2s, visibility 0.2s, -webkit-transform 0.2s;
+}
+.overlay.visible {
+	opacity: 1;
+	visibility: visible;
+}
+
+.popup {
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transform: scale(0.5) translateX(-50%);
+	transform: scale(0.5) translateX(-50%);
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+	-webkit-transition: opacity 0.5s, visibility 0.5s, -webkit-transform 0.5s;
+	transition: opacity 0.5s, visibility 0.5s, -webkit-transform 0.5s;
+	transition: transform 0.5s, opacity 0.5s, visibility 0.5s;
+	transition: transform 0.5s, opacity 0.5s, visibility 0.5s, -webkit-transform 0.5s;
+	position: absolute;
+	left: 50%;
+	top: 0;
+	z-index: 11;
+	width: 100%;
+	background: #fff;
+	padding: 70px 0 40px;
+}
+.popup.visible {
+	opacity: 1;
+	visibility: visible;
+	-webkit-transform: scale(1) translateX(-50%);
+	transform: scale(1) translateX(-50%);
+}
+@media (min-width: 719px) {
+	.popup {
+		width: 80%;
+		padding: 20px;
+	}
+	.popup .popup-image {
+		float: left;
+		width: 40%;
+	}
+	.popup .popup-body {
+		float: left;
+		width: 60%;
+		padding: 0 0 0 20px;
+	}
+	.popup .popup-header {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.popup .popup-button-close {
+		top: 20px;
+		right: 20px;
+	}
+}
+@media (min-width: 959px) {
+	.popup {
+		width: 835px;
+	}
+}
+
+.popup-header {
+	padding: 0 40px 20px;
+	overflow: hidden;
+}
+
+.popup-product-name {
+	font-family: 'Oswald', sans-serif;
+	text-transform: uppercase;
+	font-size: 24px;
+}
+
+.popup-product-id {
+	font-size: 12px;
+	float: left;
+	white-space: nowrap;
+}
+
+.popup-product-rating {
+	float: right;
+}
+
+.popup-image {
+	clear: both;
+	margin: 0 0 20px;
+}
+.popup-image .popup-product-image {
+	display: block;
+	padding: 0 0 100%;
+	overflow: hidden;
+	position: relative;
+	height: 0;
+}
+.popup-image .popup-product-image img {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.popup-body {
+	padding: 0 40px;
+}
+
+.popup-product-description {
+	font-size: 14px;
+	padding: 0 0 20px;
+}
+
+.popup-product-price {
+	white-space: nowrap;
+	font-size: 30px;
+	text-transform: uppercase;
+	font-weight: 700;
+	padding: 0 0 20px;
+}
+
+.popup-product-price-discount .popup-product-price-regular {
+	padding-right: 15px;
+}
+.popup-product-price-discount .popup-product-price-regular-in {
+	text-decoration: line-through;
+}
+
+.popup-product-price-new {
+	color: #ce2c52;
+}
+
+.size .size-header {
+	font-size: 14px;
+	font-weight: 700;
+	padding: 0 0 10px;
+	text-transform: uppercase;
+}
+
+.size .size-list {
+	overflow: hidden;
+	padding: 0 0 20px;
+}
+
+.size .size-list-in {
+	list-style: none;
+	font-size: 0;
+	margin: -10px 0 0 -20px;
+}
+
+.size .size-list-item {
+	display: inline-block;
+	vertical-align: top;
+	font-size: 16px;
+	position: relative;
+	padding-left: 20px;
+	padding-top: 10px;
+}
+.size .size-list-item input {
+	width: 0;
+	height: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.size .size-list-item input:checked + .size-list-item-name {
+	background: #2c303d;
+	color: #fff;
+}
+.size .size-list-item .size-list-item-name {
+	display: block;
+	width: 40px;
+	height: 40px;
+	border: 1px solid #2c303d;
+	border-radius: 20px;
+	color: #2c303d;
+	line-height: 38px;
+	text-align: center;
+	font-size: 12px;
+	font-weight: 700;
+}
+
+.popup-button {
+	background: #8ae6cf;
+	color: #fff;
+	border: 0;
+	padding: 15px 20px;
+	border-radius: 20px;
+	display: block;
+	width: 100%;
+	color: #2c303d;
+	font-size: 18px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	text-transform: uppercase;
+	outline: none;
+	cursor: pointer;
+}
+
+.popup-button-close {
+	position: absolute;
+	right: 40px;
+	top: 15px;
+	width: 40px;
+	height: 40px;
+	font-size: 0;
+	background: #fff;
+	border: 0;
+	border-radius: 20px;
+	border: 2px solid #2c87ce;
+	outline: none;
+	cursor: pointer;
+}
+.popup-button-close:after {
+	content: '';
+	width: 24px;
+	height: 4px;
+	background: #2c87ce;
+	overflow: hidden;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -2px 0 0 -12px;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.popup-button-close:before {
+	content: '';
+	height: 24px;
+	width: 4px;
+	background: #2c87ce;
+	overflow: hidden;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -12px 0 0 -2px;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
